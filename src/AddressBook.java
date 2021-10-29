@@ -45,17 +45,34 @@ public class AddressBook {
 		
 	}
 	
+	public static void deleteContact()
+	{
+		System.out.println("Enter first name : ");
+		String firstName = sc.nextLine();
+		for (int i = 0; i < list.size(); i++)
+		{
+			if (list.get(i).getFirstName().equalsIgnoreCase(firstName))
+			{
+				list.remove(i);
+			}
+			else {
+				System.out.println("No data found");
+			}
+		}
+	}
+	
 	public static void main(String[] args) {
 		AddressBook a = new AddressBook();
 		System.out.println("Welcome to Address Book Program..");
 		addContact();
-		System.out.println("Enter the details of new Contact");
-		int count =1;
-		while(count ==1) {
-			addContact();
-			count--;	
-		}
-		System.out.print(list);
+		deleteContact();
+//		System.out.println("Enter the details of new Contact");
+//		int count =1;
+//		while(count ==1) {
+//			addContact();
+//			count--;	
+//		}
+		System.out.println(list);
 
 	}
 
