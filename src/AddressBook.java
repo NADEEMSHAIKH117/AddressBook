@@ -61,17 +61,32 @@ public class AddressBook {
 		}
 	}
 	
+	public static void addPerson()
+	{
+		System.out.println("Enter number of person to add to Address Book: ");
+		int noOfPerson = sc.nextInt();
+		int count =1;
+		while(count <= noOfPerson)
+		{
+			addContact();
+			count++;
+		}
+	}
+	
 	public static void main(String[] args) {
 		AddressBook a = new AddressBook();
 		System.out.println("Welcome to Address Book Program..");
+		System.out.println("Enter your choice: press1 to AddContact, press2 to deleteContact, press3 to Add no. of person:- ");
+		int choice = sc.nextInt();
+		if( choice ==1) {
 		addContact();
+		}
+		else if(choice==2) {
 		deleteContact();
-//		System.out.println("Enter the details of new Contact");
-//		int count =1;
-//		while(count ==1) {
-//			addContact();
-//			count--;	
-//		}
+		}
+		else if(choice==3) {
+        addPerson();
+        }
 		System.out.println(list);
 
 	}
