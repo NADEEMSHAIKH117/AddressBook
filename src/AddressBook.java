@@ -10,6 +10,15 @@ public class AddressBook {
 	{
 		System.out.println("Enter your firstName : ");
 			String firstName = sc.nextLine();
+		for (int i =0; i<list.size(); i++)
+		{
+			if (list.get(i).getFirstName().equalsIgnoreCase(firstName))
+			{
+				System.out.println("Name already exists. Try another name");
+				addPerson();
+				break;
+			}
+		}
 		System.out.println("Enter your lastName : ");
 			String lastName = sc.nextLine();
 		System.out.println("Enter your address : ");
@@ -76,17 +85,7 @@ public class AddressBook {
 	public static void main(String[] args) {
 		AddressBook a = new AddressBook();
 		System.out.println("Welcome to Address Book Program..");
-		System.out.println("Enter your choice: press1 to AddContact, press2 to deleteContact, press3 to Add no. of person:- ");
-		int choice = sc.nextInt();
-		if( choice ==1) {
-		addContact();
-		}
-		else if(choice==2) {
-		deleteContact();
-		}
-		else if(choice==3) {
-        addPerson();
-        }
+	    addPerson();
 		System.out.println(list);
 
 	}
